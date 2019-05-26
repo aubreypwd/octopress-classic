@@ -59,7 +59,17 @@
 				</fieldset> <!-- Mobile Nav End -->
 			</form>
 
-			<ul class="main-navigation">
-				<?php wp_nav_menu( array( 'items_wrap' => '%3$s' ) ); ?>
-			</ul>
+			<div class="main-navigation">
+				<?php
+
+					/**
+					 * After the menu.
+					 *
+					 * @since  1.0.1
+					 * @author Aubrey Portwood <code@aubreypwd.com>
+					 */
+					do_action( 'octopress_menu_before' );
+					wp_nav_menu( array( 'items_wrap' => '%3$s' ) );
+				?>
+			</div>
 		</nav>
